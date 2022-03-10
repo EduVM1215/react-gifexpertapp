@@ -1,15 +1,12 @@
-import React, {useState} from 'react';
-import { AddCategory } from './Components/AddCategory';
-import {GifGrid} from './Components/GifGrid'
+import React, { useState } from "react";
+import { AddCategory } from "./Components/AddCategory";
+import { GifGrid } from "./Components/GifGrid";
 
+export const GifExpertApp = () => {
+  //mandamos el setCategories como prop al component
+  const [categories, setCategories] = useState(["Metal Gear Solid"]);
 
-
-
-export const GifExpertApp = ()=>{
-                      //mandamos el setCategories como prop al component
-    const [categories, setCategories] = useState(['El vikingo']);
-
-    /*const handleAgregar = ()=>{
+  /*const handleAgregar = ()=>{
 
       setCategories([...categories, 'Jordi Wild']);
       //setCategories(['Jordi Wild', ...categories]);
@@ -17,25 +14,21 @@ export const GifExpertApp = ()=>{
 
     }*/
 
-    return(
-      <>
-        <h2>GifExpertApp</h2>
-        <AddCategory setCategories={setCategories}/>
-        <hr/>
+  return (
+    <>
+      <h2>GifExpertApp</h2>
+      <AddCategory setCategories={setCategories} />
+      <hr />
 
-        <ul>
-          {
-            categories.map(category => (
-                <GifGrid 
-                  key={category}
-                  category={category}
-                />
-            ))
-          }
-        </ul>
-      </>
-    )
-  
-  }
-  
-  
+      <ul>
+        {
+          categories.map((category) => (
+            <GifGrid 
+              key={category} 
+              category={category} />
+          ))
+        }
+      </ul>
+    </>
+  );
+};
