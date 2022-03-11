@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { AddCategory } from "./Components/AddCategory";
 import { GifGrid } from "./Components/GifGrid";
 
-export const GifExpertApp = () => {
+export const GifExpertApp = ({defaultCategories = []}) => {
   //mandamos el setCategories como prop al component
-  const [categories, setCategories] = useState(["Metal Gear Solid"]);
+  const [categories, setCategories] = useState(defaultCategories);
 
   /*const handleAgregar = ()=>{
 
